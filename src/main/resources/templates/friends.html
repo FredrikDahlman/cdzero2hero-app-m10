@@ -1,0 +1,28 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+<body id="friends" style="background-color: {{bgcolor}}">
+<h1>Hello <span id="name">{{name}}</span>!</h1>
+<p>These are your friends:</p>
+<table border="1">
+<thead>
+<tr><th>First Name</th><th>Surname</th></tr>
+</thead>
+<tbody>
+{{#friends}}
+<tr class="friend"><td>{{firstName}}</td><td>{{surname}}</td></tr>
+{{/friends}}
+</tbody>
+</table>
+<form action="/friends" method="post">
+<p>New friend:<br/>
+<input name="firstName" type="text" placeholder="First Name" size="20">
+<input name="surname" type="text" placeholder="Surname" size="20">
+<input name="submit" type="submit" value="Add">
+</p>
+</form>
+<p><a href="/logout">Log out</a></p>
+<p>Version: {{version}} - Server: {{server}} - Env: {{env}}</p>
+</body>
+</html>
